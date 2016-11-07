@@ -21,7 +21,31 @@ h2 {
 }
 
 .button {
+    background: #ec593c;
+    background: linear-gradient(to top, #e74a35 0%,#f26843 100%);
+    border-radius: 22px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 2px 0px rgba(172,16,0,0.64); 
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 44px;
+    min-height: 44px;
+    padding: 0 20px;
+    text-decoration: none;
+}
 
+.button:hover {
+    background: linear-gradient(to top, #ec6e5d 0%,#f58669 100%); 
+    box-shadow: 0px 2px 2px 0px #ac1000;    
+}
+
+.button:active {
+    background: linear-gradient(to bottom, #d74531 0%,#e1613e 100%);
+    box-shadow: 0px 2px 2px 0px #942718 inset;
 }
 
 .clearfix::after {
@@ -37,6 +61,12 @@ h2 {
 .link {
     border-bottom: 1px solid rgba(255,255,255,0.2);
     color: #fff;
+    text-decoration: none;
+}
+
+.link:hover {
+    border-bottom: 1px solid rgba(248,171,158,0.3);
+    color: #ffbc9e;
     text-decoration: none;
 }
 
@@ -87,7 +117,7 @@ h2 {
 }
 
 .mainHeader .layoutLeft{
-    margin-left: 1.9%;
+    margin-left: 1.8%;
 }
 
 .mainHeader .layoutRight{
@@ -103,36 +133,122 @@ h2 {
 
 .mainNav {
     display: inline-block;
-    margin-top: 28px;
+    margin-top: 22px;
     vertical-align: top;
 }
 
-.mainNav ul {
+.mainNavList {
     padding-left: 15px;
 
 }
 
-.mainNav li {
+.mainNavList li {  
+    display: inline-block;
+    position: relative;       
+}
+
+.mainNavLink {
     display: inline-block;
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
-    margin: 0 14px;
+    margin: 7px 14px 0 14px;
     position: relative;
     vertical-align: top;
+    z-index: 1;
 }
 
-.mainNav li:hover > .dropdownMenu {
+.mainNavLink:active {
+    background-color: #ededed;
+    box-shadow: 0px 2px 1px 0px #696969 inset;
+}
+
+.mainNavLink:hover {
+    background-color: #f7f6f3;
+    border: none;
+    border-radius: 16px;
+    color: #323232;
+    margin: 0;
+    padding: 7px 14px;
+}
+
+.mainNavLink:hover + .dropdownMenuWrap {
     display: block;
 }
 
-.dropdownMenu {
+.mainNavLink.current {
+    background-color: #d07058;
+    border: none;
+    border-radius: 16px;
+    color: #fff;
+    margin: 0;
+    padding: 7px 14px;
+}
+
+.dropdownMenuWrap {
+    cursor: default;
     display: none;
+    left: -7px;
     position: absolute;
+    top: 31px;
+    z-index: 2;
+}
+
+.dropdownMenuWrap:hover {
+    display: block;
+}
+
+.dropdownMenu { 
+    background-color: #f8f7f4;
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4); 
+    margin-top: 8px;
+    min-width: 143px;
+    padding: 0 0 7px 0;
 }
 
 .dropdownMenu li {
+    display: block;  
+}
+
+.dropdownMenuCaption {
+    border-bottom: 1px solid #d1d0ce;
+    cursor: default;
+    color: #323232;
+    height: 37px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 33px;
+    margin: 0 8px;
+    padding-left: 12px;
+}
+
+.dropdownMenu a {
+    border: none;
+    color: #323232;
+    font-size: 14px;
+    font-weight: 400;
     display: block;
+    height: 28px;
+    line-height: 28px;
+    margin-top: 3px;
+    padding-left: 21px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.dropdownMenu a:hover {
+    background-color: #fbded7;
+}
+
+.dropdownMenu a:active {
+    background-color: #f6b5a5;
+}
+
+.dropdownMenu .current {
+    border: none;
+    background-color: #d07058;
+    color: #fff;
 }
 
 .service {
@@ -153,16 +269,9 @@ h2 {
     vertical-align: top;
 }
 
-.searchForm,
-.loginForm,
-.cartItems {
-    display: none;
-}
-
-.search:hover .searchForm,
-.login:hover .loginForm,
-.cart:hover .cartItems {
-    display: block;
+.service > div:hover {
+    background-color: #f7f6f3;
+    color: #323232;
 }
 
 .search {
@@ -170,16 +279,214 @@ h2 {
     width: 32px;
 }
 
+.search::before {
+    background: url(../img/sprite.png) no-repeat 0 0;
+    content: "";
+    height: 17px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 17px;
+}
+
+.search:hover::before {
+    background-position: -22px 0;    
+}
+
 .login {
     min-width: 40px;
     padding-left: 45px;
-    padding-right: 7px;
+    padding-right: 8px;
+}
+
+.login::before {
+    background: url(../img/sprite.png) no-repeat -44px 0;
+    content: "";
+    height: 21px;
+    left: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.login:hover::before {
+    background-position: -70px 0;    
 }
 
 .cart {
     min-width: 65px;
     padding-left: 45px;
     padding-right: 7px;
+}
+
+.cart::before {
+    background: url(../img/sprite.png) no-repeat -96px 0;
+    content: "";
+    height: 20px;
+    left: 17px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 21px;
+}
+
+.cart:hover::before {
+    background-position: -122px 0;    
+}
+
+.searchFormWrap,
+.loginFormWrap,
+.cartDropdownWrap {
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.search:hover .searchFormWrap,
+.login:hover .loginFormWrap,
+.cart:hover .cartDropdownWrap,
+.searchFormWrap:hover,
+.loginFormWrap:hover,
+.cartDropdownWrap:hover{
+    display: block;
+}
+
+.searchFormWrap {
+    right: -2px;
+    top: 30px;
+}
+
+.searchForm {
+    background-color: #f8f7f4;
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+    margin-top: 7px;
+    padding: 20px 15px;
+}
+
+.searchForm input {
+    border: 1px solid rgba(178,178,178,0.52);
+    border-radius: 4px; 
+    height: 42px;
+    padding: 0 15px;
+    width: 312px;
+}
+
+.loginFormWrap {
+    right: -2px;
+    top: 30px;
+}
+
+.loginForm {
+    background-color: #f8f7f4;
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+    margin-top: 7px;
+    padding: 20px 17px 20px 19px;
+}
+
+.loginForm input {
+    border: 1px solid rgba(178,178,178,0.52);
+    border-radius: 4px; 
+    height: 40px;
+    margin-bottom: 22px;
+    padding: 0 13px;
+    width: 212px;
+}
+
+.loginForm button {
+    border: none;
+    padding: 0 24px;
+    vertical-align: top;
+}
+
+.loginFormLinks {
+    display: inline-block;
+    line-height: 21px;
+    margin-left: 17px;
+    margin-top: -1px;
+    width: 120px;
+    vertical-align: top;
+}
+
+.loginFormLinks a {
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    color: #323232;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 400;
+    max-width: 120px;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+}
+
+.loginFormLinks a:hover,
+.loginFormLinks a:active {
+    border-bottom: 1px solid rgba(236,89,60,0.3);
+    color: #e84d37;
+}
+
+.cartDropdownWrap {
+    right: 0;
+    top: 30px;
+}
+
+.cartDropdown {
+    background-color: #f8f7f4;
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+    margin-top: 7px;
+    padding: 20px 15px;
+    text-align: right;
+    width: 510px;
+}
+
+.cartItems {
+    border-bottom: 1px solid #cacac7;
+}
+
+.cartItem {
+    text-align: left;
+}
+
+.cartItem div {
+    color: #323232;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: 10px;
+    vertical-align: top;
+}
+
+.removeItem {
+    border: none;
+    background: url('../img/sprite.png') no-repeat -148px -118px;
+    display: inline-block;
+    height: 11px;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 11px;
+}
+
+.cartItemImage {
+    margin: 0 15px;
+}
+
+.cartItemName {
+    margin-right: 25px;
+    width: 220px;
+}
+
+.cartItemAmount {
+    margin-right: 25px;
+}
+
+.cartItemPrice {
+    color: #999;
 }
 
 .headerContacts {
@@ -269,7 +576,8 @@ h2 {
 }
 
 .carousel {
-    margin: 0 2.3%;
+    margin: 10px 2.3% 0 2.3%;
+    position: relative;
 }
 
 .carouselContent {
@@ -285,6 +593,8 @@ h2 {
 .carouselSlide img {
     display: block;
     margin: 0 auto;
+    position: relative;
+    z-index: -1;
 }
 
 .carouselSlide h2 {
@@ -293,7 +603,8 @@ h2 {
     font-weight: 700;
     line-height: 60px;
     position: absolute;
-    top:340px;/*временно, не рассчитывалось*/
+    text-align: center;
+    top:260px;
 }
 
 .carouselInput{
@@ -306,6 +617,35 @@ h2 {
 
 .carouselInput:checked + div {
     display: block;
+}
+
+.carouselButtons {
+    margin-bottom: 53px;
+    margin-top: -104px;    
+}
+
+.carouselButtons label {
+    background-color: none;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 17px;
+    margin-right: 8px;
+    width: 17px;    
+}
+
+.carouselLink {
+    border-radius: 32px;
+    font-size: 32px;
+    left: 50%;
+    line-height: 64px;
+    min-height: 64px;
+    padding: 0 42px;
+    position: absolute;
+    text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76); 
+    top: 458px;
+    transform: translateX(-50%);
 }
 
 .banners {
@@ -327,18 +667,28 @@ h2 {
 .banners .layoutColumn_doubleSize {
     color: #fff;
     min-height:229px;
+    position: relative;
 }
 
 .banners h2 {
     font-size: 35px;
     font-weight: 700;
     line-height: 41px;
+    margin-bottom: 0;
+    margin-top: 16px;
 }
 
 .banners p {
     font-size: 18px;
     font-weight: 700;
-    line-height: 22px;   
+    line-height: 22px;
+    margin-top: 14px;   
+}
+
+.banners a {
+    bottom: 24px;
+    position: absolute;
+    right: 20px;
 }
 
 .bannerLeft {
@@ -352,7 +702,7 @@ h2 {
 }
 
 .itemHits {
-    margin-bottom: 40px;
+    margin-bottom: -2px;
 }
 
 .itemHits .layoutColumn:nth-child(1) {
@@ -365,6 +715,17 @@ h2 {
 
 .itemHits .layoutColumn:nth-child(4n) {
     margin-right: 2.3%;
+}
+
+.itemHits .goodsItem::after {
+    background: url('../img/sprite.png') no-repeat 0 -52px;
+    content: "v";
+    height: 61px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 61px;
+    z-index: 10;    
 }
 
 .goods .layoutColumn {
@@ -396,6 +757,10 @@ h2 {
     margin-bottom: 40px;
     text-align: center;
     position: relative;
+}
+
+.goodsItemImage {
+    margin-bottom: 7px;
 }
 
 .goodsItemCaption {
@@ -443,10 +808,13 @@ h2 {
 
 .goodsItemOverlay a {
     bottom: 20px;
-    display: block;
-    left: 0; 
+    left: 50%;
+    max-width: 95%; 
+    overflow: hidden;
+    padding: 0 15px;
     position: absolute;
-    right: 0;
+    text-overflow: ellipsis;
+    transform: translateX(-50%);
 }
 
 .goodsItem:hover .goodsItemImage,
@@ -488,18 +856,16 @@ h2 {
     font-weight: 500;
     line-height: 30px;
     margin: 0 2.3%;
-    padding: 23px 20px 0 20px;
+    padding: 23px 120px 0 20px;
+    text-align: justify;
 }
 
-.aboutUs div {
+.aboutUs .aboutUsLeft,
+.aboutUs .aboutUsRight {
     box-sizing: border-box;
     float: left;
-    margin: 4px 1.1% 2px 1.1%;
+    margin: 6px 1.1% 2px 1.1%;
     width: 46.6%;
-}
-
-.aboutUs p {
-    margin-bottom: 22px;
 }
 
 .aboutUs .aboutUsLeft {
@@ -511,6 +877,37 @@ h2 {
     margin-right: 2.3%;
     padding-left: 58px;
     padding-right: 20px;
+}
+
+.aboutUsItem {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.aboutUsItem::before {
+    background: url('../img/sprite.png') no-repeat;
+    content: "";
+    left: -58px;
+    height: 49px;
+    position: absolute;
+    top: -11px;
+    width: 49px;
+}
+
+.aboutUsItem_manufacturing::before {
+    background-position: -66px -52px;
+}
+
+.aboutUsItem_raws::before {
+    background-position: -173px -52px;
+}
+
+.aboutUsItem_purchase::before {
+    background-position: -120px -52px;
+} 
+
+.aboutUsItem_delivery::before {
+    background-position: -227px -52px;
 }
 
 .blog {
@@ -543,6 +940,8 @@ h2 {
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
+    margin-bottom: 5px;
+    margin-top: 24px;
 }
 
 .blogLatestLinkWrap {
@@ -555,7 +954,7 @@ h2 {
     color: #323232;
     font-size: 24px;
     font-weight: 700;
-    line-height: 30px;
+    line-height: 31px;
     text-decoration: none;
 }
 
@@ -573,7 +972,21 @@ h2 {
 
 .subscribeForm p {
     color: #5a5a5a;
-    margin-top: 10px;
+    margin-bottom: 37px;
+    margin-top: 28px;
+}
+
+.subscribeForm input {
+    border: 1px solid rgba(178,178,178,0.52);
+    border-radius: 4px; 
+    height: 42px;
+    margin-right: 3px;
+    padding: 0 15px;
+    width: 334px;
+}
+
+.subscribeForm button {
+    border: 0;
 }
 
 .map {
@@ -587,13 +1000,39 @@ h2 {
     background-color: #fefefe;
     border-radius: 12px;
     box-sizing: border-box;
+    color: #323232;
     display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
     text-align: left;
     margin: 62px 2.3% 62px 0;
     min-height: 305px;
-    padding: 0 25px;
+    padding: 13px 25px 0 25px;
     vertical-align: top;
     width: 300px;
+}
+
+.mapContacts strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.mapContacts a {
+    margin-top: 10px;
+    padding: 0 26px;
+}
+
+.mapContactsAdress {
+    margin-bottom: 19px;
+    margin-top: 16px;
+}
+
+.mapContactsTel strong {
+    margin-bottom: 2px;
+    margin-top: 4px;
 }
 
 .pageNavigator {
@@ -643,34 +1082,51 @@ h2 {
 }
 
 .socialButtons li {
+    border: 3px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
     display: inline-block;
+    height: 32px;
     margin-right: 11px;
     vertical-align: top;
+    width: 32px;
+}
+
+.socialButtons li:hover {
+    border-color: rgba(255,255,255,0.7)
 }
 
 .socialButtons a{
-    background-clip: content-box;
-    border: 3px solid rgba(255,255,255,0.5);
+    background: url('../img/sprite.png') no-repeat;
     border-radius: 50%;
     display: block;
+    opacity: 0.8;
     height: 32px;
     width: 32px;
 }
 
+.socialButtons a:hover {
+    opacity: 1;
+}
+
+.socialButtons a:active {
+    box-shadow: 0px 2px 1px 0px #888 inset;
+    opacity: 0.8;
+}
+
 .socialButtons .tw {
-    background-image: url(../img/twitterIcon.png);
+    background-position: 0 -118px;
 }
 
 .socialButtons .ig {
-    background-image: url(../img/instagramIcon.png);
+    background-position: -37px -118px;
 }
 
 .socialButtons .fb {
-    background-image: url(../img/facebookIcon.png);
+    background-position: -74px -118px;
 }
 
 .socialButtons .vk {
-    background-image: url(../img/vkontakteIcon.png);
+    background-position: -111px -118px;
 }
 
 .footerLinks {
@@ -700,7 +1156,7 @@ h2 {
 }
 
 .footerLinksCol .highlited::before {
-    background-image: url(../img/heartIcon.png);
+    background: url('../img/sprite.png') no-repeat -164px -118px;
     content: "";
     height: 13px;
     left: -22px;

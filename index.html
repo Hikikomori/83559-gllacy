@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Глейси - Главная страница</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/style.css" >
     </head>
@@ -14,30 +15,32 @@
                         <img src="img/logo.svg" alt="GllacyShop" height="64" width="154">
                     </div>
                     <nav class="mainNav">
-                        <ul>
+                        <ul class="mainNavList">
                             <li>
-                                <a class="link" href="#">Каталог</a>
-                                <ul class="dropdownMenu">
-                                    <li class="dropdownMenuCaption">Новинки</li>
-                                    <li>
-                                        <a href="catalog.html">Сливочное</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Щербеты</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Фруктовый лед</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Мелорин</a>
-                                    </li>
-                                </ul>
+                                <a class="link mainNavLink" href="#">Каталог</a>
+                                <div class="dropdownMenuWrap">
+                                    <ul class="dropdownMenu">
+                                        <li class="dropdownMenuCaption">Новинки</li>
+                                        <li>
+                                            <a href="catalog.html">Сливочное</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Щербеты</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Фруктовый&nbsp;лед</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Мелорин</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <li>
-                                <a class="link" href="#">Доставка и оплата</a>
+                                <a class="link mainNavLink" href="#">Доставка и оплата</a>
                             </li>
                             <li>
-                                <a class="link" href="#">О компании</a>
+                                <a class="link mainNavLink" href="#">О Компании</a>
                             </li>
                         </ul>
                     </nav>
@@ -47,24 +50,28 @@
                     <div class="service">
                         <div class="search">
                             <div class="searchCaption"></div>
-                            <div class="searchForm">
-                                <form action="/echo" method="post">
-                                    <input name="search" placeholder="Что ищем?" type="search">
-                                </form>
+                            <div class="searchFormWrap">
+                                <div class="searchForm">
+                                    <form action="/echo" method="post">
+                                        <input name="search" placeholder="Что ищем?" type="search">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="login">
                             <div class="loginCaption">Вход</div>
-                            <div class="loginForm">
-                                <form action="/echo" method="post">
-                                    <input name="email" placeholder="Электронная почта" type="email">
-                                    <input name="password" placeholder="Пароль" type="password">
-                                    <button type="submit">Войти</button>
-                                    <div class="formLinks">
-                                        <a class="link" href="#">Забыль пароль?</a>
-                                        <a class="link" href="#">Новая регистрация</a>
-                                    </div>
-                                </form>
+                            <div class="loginFormWrap">
+                                <div class="loginForm">
+                                    <form action="/echo" method="post">
+                                        <input name="email" placeholder="Электронная почта" type="email">
+                                        <input name="password" placeholder="Пароль" type="password">
+                                        <button class="button" type="submit">Войти</button>
+                                        <div class="loginFormLinks">
+                                            <a href="#">Забыли пароль?</a>
+                                            <a href="#">Новая регистрация</a>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="cart">Пусто</div>
@@ -83,23 +90,25 @@
                         <div class="carouselSlide slide1">
                             <img src="img/carouselBg_1.png" alt="Крем-брюле и пломбир с малиновым джемом" height="584" width="647">
                             <h2>Крем-брюле и пломбир с малиновым джемом</h2>
+                            <a class="carouselLink button" href="#">Давайте оба!</a>
                         </div>
                         <input type="radio" class="carouselInput" name="carousel" id="btn2">
                         <div class="carouselSlide slide2">
                             <img src="img/carouselBg_2.png" alt="Шоколадный пломбир и лимонный сорбет" height="584" width="647">
                             <h2>Шоколадный пломбир и лимонный сорбет</h2>
+                            <a class="carouselLink button" href="#">Давайте оба!</a>
                         </div>
                         <input type="radio" class="carouselInput" name="carousel" id="btn3">
                         <div class="carouselSlide slide3">
                             <img src="img/carouselBg_3.png" alt="Пломбир с помадкой и клубничный щербет" height="584" width="647">
                             <h2>Пломбир с помадкой и клубничный щербет</h2>
+                            <a class="carouselLink button" href="#">Давайте оба!</a>
                         </div>
                     </div>
-                    <a class="carouselLink" href="#">Давайте оба!</a>
-                    <div class="carouselButtons">
-                         <label for="btn1">1</label>
-                         <label for="btn2">2</label>
-                         <label for="btn3">3</label>
+                    <div class="carouselButtons inlineblockFix">
+                         <label for="btn1"></label>
+                         <label for="btn2"></label>
+                         <label for="btn3"></label>
                      </div> 
                 </div>
 
@@ -107,12 +116,12 @@
                     <div class="layoutColumn layoutColumn_doubleSize bannerLeft">
                         <h2>Малинка даром!</h2>
                         <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-                        <a href="#">Хочу варенье!</a>
+                        <a class="button" href="#">Хочу варенье!</a>  
                     </div>
                     <div class="layoutColumn layoutColumn_doubleSize bannerRight">
                         <h2>Шоколадки даром!</h2>
                         <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки  абсолютно бесплатно.</p>
-                        <a href="#">Хочу шоколадки</a>
+                        <a class="button" href="#">Хочу шоколадки!</a>
                     </div>
                 </div>
 
@@ -123,7 +132,7 @@
                             <div class="goodsItemPrice">310<span>/кг</span></div>
                             <a href="#" class="goodsItemCaption link">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
                             <div class="goodsItemOverlay">
-                                <a href="#">Быстрый просмотр</a>
+                                <a class="button" href="#">Быстрый&nbsp;просмотр</a>
                             </div>
                         </div>
                     </div>
@@ -133,7 +142,7 @@
                             <div class="goodsItemPrice">380<span>/кг</span></div>
                             <a href="#" class="goodsItemCaption link">Сливочно-кофейное с кусочками шоколада</a>
                             <div class="goodsItemOverlay">
-                                <a href="#">Быстрый просмотр</a>
+                                <a class="button" href="#">Быстрый&nbsp;просмотр</a>
                             </div>
                         </div>
                     </div>
@@ -143,7 +152,7 @@
                             <div class="goodsItemPrice">355<span>/кг</span></div>
                             <a href="#" class="goodsItemCaption link">Сливочно-клубничное с присыпкой из белого шоколада</a>
                             <div class="goodsItemOverlay">
-                                <a href="#">Быстрый просмотр</a>
+                                <a class="button" href="#">Быстрый&nbsp;просмотр</a>
                             </div>
                         </div>
                     </div>
@@ -153,7 +162,7 @@
                             <div class="goodsItemPrice">415<span>/кг</span></div>
                             <a href="#" class="goodsItemCaption link">Сливочное крем-брюле с карамельной подливкой</a>
                             <div class="goodsItemOverlay">
-                                <a href="#">Быстрый просмотр</a>
+                                <a class="button" href="#">Быстрый&nbsp;просмотр</a>
                             </div>
                         </div>
                     </div>
@@ -183,7 +192,7 @@
                             <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
                             <form action="/echo" method="post">
                                 <input type="email" placeholder="Электронная почта">
-                                <button type="submit">Отправить</button>
+                                <button class="button" type="submit">Отправить</button>
                             </form>
                         </div>
                     </div>
@@ -192,9 +201,9 @@
             <div class="map">
                 <div class="layoutCenter">
                     <div class="mapContacts">
-                        <p>Адрес главного офиса и офлайн магазина:<strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong></p>
-                        <p>Для заказов по телефону:<strong>8 812 450-25-25</strong>(с 10 до 20 ежедневно)</p>
-                        <a href="#">Форма обратной связи</a>
+                        <p class="mapContactsAdress">Адрес главного офиса и<br> офлайн магазина:<strong>ул. Большая Конюшенная<br> 19/8, Санкт-Петербург</strong></p>
+                        <p class="mapContactsTel">Для заказов по телефону:<strong>8 812 450-25-25</strong>(с 10 до 20 ежедневно)</p>
+                        <a class="button" href="#">Форма обратной связи</a>
                     </div>
                 </div>
             </div>
@@ -226,7 +235,7 @@
                             <a class="link" href="#">О производстве</a>
                         </div>
                         <div class="footerLinksCol footerLinksColLeftRight">
-                            <a class="link"href="#">Наши документы</a><br>
+                            <a class="link" href="#">Наши документы</a><br>
                             <a class="link" href="#">Экологические стандарты</a>
                         </div>
                     </div> 
@@ -249,7 +258,7 @@
                 <button></button>
                 <input name="name" type="text" placeholder="Как вас зовут?">
                 <input name="email" type="email" placeholder="Ваша почта для ответа?">
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Напишите что нибудь..."></textarea>
+                <textarea name="message" cols="30" rows="10" placeholder="Напишите что нибудь..."></textarea>
                 <button type="submit">Отправить</button>
             </form>
         </div>
