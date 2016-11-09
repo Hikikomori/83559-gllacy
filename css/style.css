@@ -20,6 +20,11 @@ h2 {
     line-height: 30px;
 }
 
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 .button {
     background: #ec593c;
     background: linear-gradient(to top, #e74a35 0%,#f26843 100%);
@@ -333,6 +338,19 @@ h2 {
 }
 
 .cart:hover::before {
+    background-position: -148px 0;    
+}
+
+.service .cartFilled {
+    background-color: #f7f6f3;
+    color: #323232;
+}
+
+.cartFilled::before {
+    background-position: -122px 0;    
+}
+
+.cartFilled:hover::before {
     background-position: -122px 0;    
 }
 
@@ -404,7 +422,7 @@ h2 {
 
 .loginFormLinks {
     display: inline-block;
-    line-height: 21px;
+    line-height: 18px;
     margin-left: 17px;
     margin-top: -1px;
     width: 120px;
@@ -582,19 +600,24 @@ h2 {
 
 .carouselContent {
     margin: 0 auto;
-    width: 670px;
+    width: 680px;
+}
+
+.carouselContent > div {
+    display: none;
 }
 
 .carouselSlide {
     position: relative;
-    width: 670px;
+    width: 680px;
 }
 
 .carouselSlide img {
     display: block;
+    height: 584px;
     margin: 0 auto;
     position: relative;
-    z-index: -1;
+    width: 647px;
 }
 
 .carouselSlide h2 {
@@ -611,12 +634,31 @@ h2 {
     display: none;
 }
 
-.carouselInput + div {
-    display: none;
+.carouselInput1:checked ~ .wrap .slide1,
+.carouselInput2:checked ~ .wrap .slide2,
+.carouselInput3:checked ~ .wrap .slide3 {
+    display: block;
+} 
+
+.carouselInput1:checked ~ .wrap {
+    background-color: #849d8f;
+    background-image: url(../img/carousel_bl_1.png);
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
-.carouselInput:checked + div {
-    display: block;
+.carouselInput2:checked ~ .wrap {
+    background-color: #8996a6;
+    background-image: url(../img/carousel_bl_2.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.carouselInput3:checked ~ .wrap {
+    background-color: #9d8b84;
+    background-image: url(../img/carousel_bl_3.png);
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
 .carouselButtons {
@@ -625,7 +667,7 @@ h2 {
 }
 
 .carouselButtons label {
-    background-color: none;
+    background-color: transparent;
     border: 2px solid #fff;
     border-radius: 50%;
     cursor: pointer;
@@ -633,6 +675,12 @@ h2 {
     height: 17px;
     margin-right: 8px;
     width: 17px;    
+}
+
+.carouselInput1:checked ~ .wrap label[for="btn1"],
+.carouselInput2:checked ~ .wrap label[for="btn2"],
+.carouselInput3:checked ~ .wrap label[for="btn3"] {
+  background-color: #ffffff;
 }
 
 .carouselLink {
@@ -692,17 +740,29 @@ h2 {
 }
 
 .bannerLeft {
-    background: #740213 url(../img/bannerBg_1.jpg) repeat right;
+    background: #740213 url(../img/banner_bg_1.jpg) repeat right;
     border-radius: 12px;
 }
 
 .bannerRight {
-    background: #532e17 url(../img/bannerBg_2.jpg) repeat right;
+    background: #532e17 url(../img/banner_bg_2.jpg) repeat right;
     border-radius: 12px;
 }
 
 .itemHits {
     margin-bottom: -2px;
+}
+
+.itemHits .layoutColumn,
+.goods .layoutColumn {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.itemHits.inlineblockFix,
+.goods.inlineblockFix {
+    line-height: 1.15;
 }
 
 .itemHits .layoutColumn:nth-child(1) {
@@ -719,19 +779,13 @@ h2 {
 
 .itemHits .goodsItem::after {
     background: url('../img/sprite.png') no-repeat 0 -52px;
-    content: "v";
+    content: "";
     height: 61px;
     left: 0;
     position: absolute;
     top: 0;
     width: 61px;
     z-index: 10;    
-}
-
-.goods .layoutColumn {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
 }
 
 .goods .layoutColumn:nth-child(1) {
@@ -746,12 +800,6 @@ h2 {
     margin-right: 2.3%;
 }
 
-.goods .layoutColumn::after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
 .goodsItem {
     color: #fff;
     margin-bottom: 40px;
@@ -760,7 +808,8 @@ h2 {
 }
 
 .goodsItemImage {
-    margin-bottom: 7px;
+    border-radius: 50%;
+    margin-bottom: 12px;
 }
 
 .goodsItemCaption {
@@ -775,23 +824,24 @@ h2 {
     left: 0;
     line-height: 45px;
     position: absolute;
+    text-shadow: 1px 1px 3px rgba(49, 50, 53, 0.5); 
     top: 208px;
 }
 
 .goodsItemPrice span {
     font-size: 30px;
-    padding-left: 37px;
+    padding-left: 34px;
     position: relative;
 }
 
 .goodsItemPrice span::before {
-    background-image: url(../img/roubleSymbol.svg);
-    bottom: 7px;
+    background: url('../img/sprite.png') no-repeat -199px -114px;
+    bottom: 4px;
     content: "";
-    height: 32px;
-    left: 4px;
+    height: 36px;
+    left: 2px;
     position: absolute;
-    width: 27px;
+    width: 31px;
 }
 
 .goodsItemOverlay {
@@ -839,7 +889,7 @@ h2 {
 }
 
 .aboutUs::before {
-    background: #eee3cb url(../img/wafflePattern.jpg) repeat center;
+    background: #eee3cb url(../img/waffle_pattern.jpg) repeat center;
     bottom: 0;
     border-radius: 12px;
     content: "";
@@ -847,7 +897,6 @@ h2 {
     right: 2.3%;
     position: absolute;
     top: 0;
-    z-index: -1;
 
 }
 
@@ -857,7 +906,9 @@ h2 {
     line-height: 30px;
     margin: 0 2.3%;
     padding: 23px 120px 0 20px;
+    position: relative;
     text-align: justify;
+    z-index: 1;
 }
 
 .aboutUs .aboutUsLeft,
@@ -932,7 +983,7 @@ h2 {
 }
 
 .blogLatest {
-    background: #fff url(../img/blogEntryBg.jpg) no-repeat right;
+    background: #fff url(../img/blog_entry_bg.jpg) no-repeat right;
     color: #323232;
 }
 
@@ -990,10 +1041,16 @@ h2 {
 }
 
 .map {
-    background-image: url(../img/map4K.jpg);
+    background-image: url(../img/map_4k.jpg);
     background-position: center;
     height: 430px;
     text-align: right;
+    position: relative;
+}
+
+.map > ymaps {
+    position: absolute;
+    top: 0;
 }
 
 .mapContacts {
@@ -1009,8 +1066,10 @@ h2 {
     margin: 62px 2.3% 62px 0;
     min-height: 305px;
     padding: 13px 25px 0 25px;
+    position: relative;
     vertical-align: top;
     width: 300px;
+    z-index: 1;
 }
 
 .mapContacts strong {
