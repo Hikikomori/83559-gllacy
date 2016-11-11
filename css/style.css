@@ -1587,6 +1587,12 @@ textarea::placeholder {
     text-align: right;
 }
 
+.feedbackNameWrap,
+.feedbackEmailWrap,
+.feedbackMessageWrap {
+    position: relative;
+}
+
 .feedbackForm input,
 .feedbackForm textarea {
     border: 1px solid #d3d3d2;
@@ -1594,7 +1600,7 @@ textarea::placeholder {
     display: block;
     font-family: "Roboto", Tahoma, sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     text-align: left;
     margin-bottom: 20px;
     padding: 0 15px;
@@ -1613,10 +1619,55 @@ textarea::placeholder {
     width: 396px;
 }
 
+.feedbackForm input:hover, 
+.feedbackForm textarea:hover {
+    border: 2px solid #c7c6c5;   
+}
+
+.feedbackForm input:hover {
+    height: 40px; 
+    padding: 0 14px;
+} 
+
+.feedbackForm textarea:hover {
+    height: 133px;
+    padding: 9px 14px;
+}
+
+.feedbackForm input:focus, 
+.feedbackForm textarea:focus {
+    border-color: #8fbdec;    
+}
+
+.feedbackForm input + span,
+.feedbackForm textarea + span {
+    color: #999;
+    display: none;
+    font-size: 11px;
+    line-height: 13px;
+    left: 15px;
+    position: absolute;
+    top: -15px;
+}
+
+.feedbackForm input:valid + span,
+.feedbackForm textarea:valid + span {
+    display: block;
+}
+
+.feedbackForm input:focus + span,
+.feedbackForm textarea:focus + span {
+    color: #5b9ddf;
+    display: block;
+}
+
 .feedbackSubmit {
     border: none;
     margin-top: 4px;
     padding: 0 24px;
 }
 
-
+.feedbackShow {
+    display: block;
+}
+ 
