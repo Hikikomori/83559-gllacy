@@ -2,7 +2,7 @@
 
 body {
     background-color: #849d8f;
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: "Roboto", Tahoma, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
@@ -25,6 +25,46 @@ img {
     max-width: 100%;
 }
 
+input::-webkit-input-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+input::-moz-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+input:-ms-input-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+input::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+textarea::-moz-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+textarea:-ms-input-placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+textarea::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
 .button {
     background: #ec593c;
     background: linear-gradient(to top, #e74a35 0%,#f26843 100%);
@@ -34,7 +74,7 @@ img {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: "Roboto", Tahoma, sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 44px;
@@ -111,6 +151,12 @@ img {
 .layoutRight {
     float: right;
     text-align: right;
+}
+
+.wrapCatalog {
+    background-image: url(../img/catalog_bl.png);
+    background-position: center top;
+    background-repeat: repeat-x;
 }
 
 
@@ -277,6 +323,27 @@ img {
 .service > div:hover {
     background-color: #f7f6f3;
     color: #323232;
+}
+
+.service input {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.service input::-webkit-input-placeholder {
+    font-size: 14px;
+}
+
+.service input::-moz-placeholder {
+    font-size: 14px;
+}
+
+.service input:-ms-input-placeholder {
+    font-size: 14px;
+}
+
+.service input::placeholder {
+    font-size: 14px;
 }
 
 .search {
@@ -457,16 +524,19 @@ img {
     border-radius: 5px;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
     margin-top: 7px;
-    padding: 20px 15px;
+    padding: 17px 14px;
     text-align: right;
     width: 510px;
 }
 
 .cartItems {
     border-bottom: 1px solid #cacac7;
+    margin-bottom: 13px;
+    padding-bottom: 6px;
 }
 
 .cartItem {
+    margin-bottom: 4px;
     text-align: left;
 }
 
@@ -483,28 +553,43 @@ img {
 .removeItem {
     border: none;
     background: url('../img/sprite.png') no-repeat -148px -118px;
+    cursor: pointer;
     display: inline-block;
     height: 11px;
-    margin-top: 10px;
+    margin-top: 12px;
     vertical-align: top;
     width: 11px;
 }
 
 .cartItemImage {
-    margin: 0 15px;
+    margin-left: 15px;
+    margin-right: 12px;
 }
 
 .cartItemName {
-    margin-right: 25px;
+    margin-right: 26px;
     width: 220px;
 }
 
 .cartItemAmount {
-    margin-right: 25px;
+    margin-right: 29px;
 }
 
 .cartItemPrice {
     color: #999;
+}
+
+.cartTotal {
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.cartCheckout {
+    margin-bottom: 5px;
+    margin-top: 14px;
+    padding: 0 15px;
 }
 
 .headerContacts {
@@ -543,7 +628,7 @@ img {
 .breadcrumbs li:not(:last-of-type)::after {
     content: "»";
     margin-left: 4px;
-    margin-right: 8px;
+    margin-right: 7px;
 }
 
 .pageCaption {
@@ -567,13 +652,14 @@ img {
     box-sizing: border-box;
     color: #fff;
     display: inline-block;
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: "Roboto", Tahoma, sans-serif;
     font-size: 14px;
     font-weight: 500;
     height: 36px;
     line-height: 36px;
-    margin-right: 16px;
-    padding: 0 16px;
+    margin-left: 0;
+    margin-right: 1.33%;
+    padding: 0 1.42%;
     position: relative;
     text-align: left;
     vertical-align: top;
@@ -591,6 +677,173 @@ img {
 .filterRow li {
     display: inline-block;
     font-size: 14px;
+}
+
+.filterRow .filterSort {
+    padding: 0;
+}
+
+.filterSort legend {
+    left: 16px;
+}
+
+.filterSort select {
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-family: "Roboto", Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 500;    
+    height: 36px;
+    min-width: 190px; 
+    padding: 0 11px;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.filterSort select:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.filterSort option {
+    font-size: 14px: 
+    font-weight: 400;
+}
+
+.filterRange {
+    background-color: rgba(248,247,244,0.5);
+    height: 4px;
+    margin-top: 16px;
+    width: 188px;
+}
+
+.filterRangeSelection {
+    background-color: #f8f7f4;
+    height: 4px;
+    margin-left: 30px;
+    position: relative;
+    width: 98px;
+}
+
+.filterRangeSelection::before,
+.filterRangeSelection::after {
+    background-color: #f8f7f4;
+    border-radius: 50%;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1); 
+    content: "";
+    cursor: pointer;
+    height: 21px;
+    margin-top: -11px;
+    position: absolute;
+    top: 50%;
+    width: 21px;
+}
+
+.filterRangeSelection::before {
+    left: -10px;
+}
+
+.filterRangeSelection::after {
+    right: -10px;
+}
+
+.filterRow input {
+    display: none;
+}
+
+.filterRow input + label {
+    font-size: 16px;
+    line-height: 18px;
+    padding-left: 32px;
+    position: relative;
+}
+
+.filterRow input + label::before {
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;
+    content: "";
+    cursor: pointer;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+}
+
+.filterRow input:disabled + label::before {
+    opacity: 0.4;    
+}
+
+.filterRow input[type="radio"] + label {
+    margin-left: 17px;
+}
+
+.filterRow input[type="checkbox"] + label {
+    margin-left: 21px;
+}
+
+.filterRow input[type="radio"] + label::before {
+    background-position: 0 -25px;
+    height: 22px;
+    width: 21px;
+}
+
+.filterRow input[type="radio"]:checked + label::before {
+    background-position: -26px -25px;
+}
+
+.filterRow input[type="radio"] + label:hover::before {
+    background-position: -52px -25px;
+}
+
+.filterRow input[type="radio"]:checked + label:hover::before {
+    background-position: -78px -25px;
+}
+
+.filterRow input[type="checkbox"] + label::before {
+    background-position: -104px -25px;
+    height: 20px;
+    width: 20px;
+}
+
+.filterRow input[type="checkbox"]:checked + label::before {
+    background-position: -129px -25px;
+}
+
+.filterRow input[type="checkbox"] + label:hover::before {
+    background-position: -154px -25px;
+}
+
+.filterRow input[type="checkbox"]:checked + label:hover::before{
+    background-position: -179px -25px;
+}
+
+.filterFatness li:first-of-type {
+    margin-left: -17px;
+}
+
+.filterFillers li:first-of-type {
+    margin-left: -21px;
+}
+
+.filterRow button {
+    border: 2px solid #fcfcfc;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 32px;
+    margin-top: -1px;
+    padding: 0 27px;
+}
+
+.filterRow button:hover {
+    background-color: #fbfcfb;
+    border: none;
+    color: #323232;
+    padding: 0 29px;
+}
+
+.filterRow button:active {
+    background-color: #eaeaea;
+    box-shadow: 0px 2px 1px 0px #696969 inset; 
+    color: #323232;
 }
 
 .carousel {
@@ -675,6 +928,10 @@ img {
     height: 17px;
     margin-right: 8px;
     width: 17px;    
+}
+
+.carouselButtons label:hover {
+    background-color: rgba(255,255,255,0.4);
 }
 
 .carouselInput1:checked ~ .wrap label[for="btn1"],
@@ -785,7 +1042,7 @@ img {
     position: absolute;
     top: 0;
     width: 61px;
-    z-index: 10;    
+    z-index: 3;    
 }
 
 .goods .layoutColumn:nth-child(1) {
@@ -807,9 +1064,9 @@ img {
     position: relative;
 }
 
-.goodsItemImage {
-    border-radius: 50%;
+.goodsItemImageWrap {
     margin-bottom: 12px;
+    position: relative;
 }
 
 .goodsItemCaption {
@@ -825,7 +1082,7 @@ img {
     line-height: 45px;
     position: absolute;
     text-shadow: 1px 1px 3px rgba(49, 50, 53, 0.5); 
-    top: 208px;
+    top: 77.9%;
 }
 
 .goodsItemPrice span {
@@ -1023,8 +1280,9 @@ img {
 
 .subscribeForm p {
     color: #5a5a5a;
-    margin-bottom: 37px;
     margin-top: 28px;
+    margin-bottom: 0;
+    min-height: 103px;
 }
 
 .subscribeForm input {
@@ -1033,7 +1291,7 @@ img {
     height: 42px;
     margin-right: 3px;
     padding: 0 15px;
-    width: 334px;
+    width: calc(100% - 173px);
 }
 
 .subscribeForm button {
@@ -1096,30 +1354,68 @@ img {
 
 .pageNavigator {
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    margin-top: 45px;
-    padding-bottom: 27px;
+    margin-top: 40px;
+    padding-bottom: 26px;
     text-align: right;
 }
 
 .pageNavigatorList {
     display: inline-block;
     padding: 0 22px;
+    position: relative;
+    text-align: center;
+}
+
+.pageNavigatorList::before,
+.pageNavigatorList::after {
+    background: url('../img/sprite.png') no-repeat -184px -118px;
+    content: "";
+    height: 14px;
+    position: absolute;
+    top: 6px;
+    width: 9px;
+}
+
+.pageNavigatorList::before {
+    left: 0;
+    opacity: 0.2;
+    transform: rotate(180deg);
+}
+
+.pageNavigatorList::after {
+    right: 0;
 }
 
 .pageNavigatorList li {
     display: inline-block;
+    height: 26px;
+    width: 26px;
 }
 
-.pageNavigatorList li{
-    margin: 0 11px;
+.pageNavigatorList li{  
+    border-radius: 50%;
+    margin: 0 2px;
+}
+
+.pageNavigatorList li:hover{
+    background-color: rgba(255,255,255,0.2);
+    cursor: pointer;    
 }
 
 .pageNavigatorList a {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
-    line-height: 18px;
+    line-height: 26px;
     text-decoration: none;
+}
+
+.currentPage {
+    background-color: #fff;
+}
+
+.currentPage a {
+    color: #323232;
 }
 
 
@@ -1195,6 +1491,7 @@ img {
 
 .footerLinksCol {
     display: inline-block;
+    line-height: 14px;
     text-align: left;
     vertical-align: top;
 }
@@ -1247,5 +1544,79 @@ img {
 /*Other*/
 
 .feedback {
+    background-color: rgba(0,0,0,0.3);
+    bottom: 0;
     display: none;
+    left: 0;
+    right: 0;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+
 }
+
+.feedbackForm {
+    background-color: #f8f7f4;
+    border-radius: 10px;
+    height: 413px;
+    left: 50%;
+    margin-left: -237px;
+    padding: 15px 24px;
+    position: fixed;
+    top: 338px;
+    width: 429px;
+}
+
+.feedbackClose {
+    background: url('../img/sprite.png') no-repeat -147px -133px;
+    border: none;
+    cursor: pointer;
+    height: 17px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 18px;
+}
+
+.feedbackForm h2 {
+    margin-bottom: 18px;
+    margin-top: 0;
+}
+
+.feedbackForm form {
+    text-align: right;
+}
+
+.feedbackForm input,
+.feedbackForm textarea {
+    border: 1px solid #d3d3d2;
+    border-radius: 4px;
+    display: block;
+    font-family: "Roboto", Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.feedbackForm input {
+    height: 42px;
+    line-height: 42px;
+    width: 235px;
+}
+
+.feedbackForm textarea {
+    resize: none;
+    height: 133px;
+    padding: 10px 15px;
+    width: 396px;
+}
+
+.feedbackSubmit {
+    border: none;
+    margin-top: 4px;
+    padding: 0 24px;
+}
+
+

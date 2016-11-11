@@ -129,8 +129,10 @@
                     <div class="itemHits inlineblockFix">
                         <div class="layoutColumn">
                             <div class="goodsItem">
-                                <img class="goodsItemImage" src="img/goods/orange_marmalade.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" height="267" width="267">
-                                <div class="goodsItemPrice">310<span>/кг</span></div>
+                                <div class="goodsItemImageWrap">
+                                    <img class="goodsItemImage" src="img/goods/orange_marmalade.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" height="267" width="267">
+                                    <div class="goodsItemPrice">310<span>/кг</span></div>
+                                </div>
                                 <a href="#" class="goodsItemCaption link">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
                                 <div class="goodsItemOverlay">
                                     <a class="button" href="#">Быстрый&nbsp;просмотр</a>
@@ -139,8 +141,10 @@
                         </div>
                         <div class="layoutColumn">
                             <div class="goodsItem">
-                                <img class="goodsItemImage" src="img/goods/coffee_chocolate.png" alt="Сливочно-кофейное с кусочками шоколада" height="267" width="267">
-                                <div class="goodsItemPrice">380<span>/кг</span></div>
+                                <div class="goodsItemImageWrap">
+                                    <img class="goodsItemImage" src="img/goods/coffee_chocolate.png" alt="Сливочно-кофейное с кусочками шоколада" height="267" width="267">
+                                    <div class="goodsItemPrice">380<span>/кг</span></div>
+                                </div>
                                 <a href="#" class="goodsItemCaption link">Сливочно-кофейное с кусочками шоколада</a>
                                 <div class="goodsItemOverlay">
                                     <a class="button" href="#">Быстрый&nbsp;просмотр</a>
@@ -149,8 +153,10 @@
                         </div>
                         <div class="layoutColumn">
                             <div class="goodsItem">
-                                <img class="goodsItemImage" src="img/goods/strawberry_whitechocolate.png" alt="Сливочно-клубничное с присыпкой из белого шоколада" height="267" width="267">
-                                <div class="goodsItemPrice">355<span>/кг</span></div>
+                                <div class="goodsItemImageWrap">
+                                    <img class="goodsItemImage" src="img/goods/strawberry_whitechocolate.png" alt="Сливочно-клубничное с присыпкой из белого шоколада" height="267" width="267">
+                                    <div class="goodsItemPrice">355<span>/кг</span></div>
+                                </div>
                                 <a href="#" class="goodsItemCaption link">Сливочно-клубничное с присыпкой из белого шоколада</a>
                                 <div class="goodsItemOverlay">
                                     <a class="button" href="#">Быстрый&nbsp;просмотр</a>
@@ -159,8 +165,10 @@
                         </div>
                         <div class="layoutColumn">
                             <div class="goodsItem">
-                                <img class="goodsItemImage" src="img/goods/creme_brulee_caramel.png" alt="Сливочное крем-брюле с карамельной подливкой" height="267" width="267">
-                                <div class="goodsItemPrice">415<span>/кг</span></div>
+                                <div class="goodsItemImageWrap">
+                                    <img class="goodsItemImage" src="img/goods/creme_brulee_caramel.png" alt="Сливочное крем-брюле с карамельной подливкой" height="267" width="267">
+                                    <div class="goodsItemPrice">415<span>/кг</span></div>
+                                </div>
                                 <a href="#" class="goodsItemCaption link">Сливочное крем-брюле с карамельной подливкой</a>
                                 <div class="goodsItemOverlay">
                                     <a class="button" href="#">Быстрый&nbsp;просмотр</a>
@@ -254,16 +262,19 @@
 
 
             <div class="feedback">
-                <form action="/echo" method="post">
+                <div class="feedbackForm">
                     <h2>Мы обязательно вам ответим!</h2>
-                    <button></button>
-                    <input name="name" type="text" placeholder="Как вас зовут?">
-                    <input name="email" type="email" placeholder="Ваша почта для ответа?">
-                    <textarea name="message" cols="30" rows="10" placeholder="Напишите что нибудь..."></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
+                    <button class="feedbackClose"></button>
+                    <form action="/echo" method="post">
+                        <input class="feedbackName" name="name" type="text" placeholder="Как вас зовут?">
+                        <input class="feedbackEmail" name="email" type="email" placeholder="Ваша почта для ответа?">
+                        <textarea class="feedbackMessage" name="message" placeholder="Напишите что нибудь..."></textarea>
+                        <button class="button feedbackSubmit" type="submit">Отправить</button>
+                    </form>
+                </div>
             </div>
         </div>
+
         <!--Карта начало-->
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
         <script type="text/javascript">
@@ -291,5 +302,6 @@
             });
         </script>
         <!--Карта конец-->
+        
     </body> 
 </html>
