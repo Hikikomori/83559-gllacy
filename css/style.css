@@ -1546,11 +1546,11 @@ textarea::placeholder {
 .feedback {
     background-color: rgba(0,0,0,0.3);
     bottom: 0;
-    display: none;
     left: 0;
     right: 0;
     position: fixed;
-    top: 0;
+    top: 100%;
+    transition: top 1s ease-in-out;
     z-index: 20;
 
 }
@@ -1562,7 +1562,7 @@ textarea::placeholder {
     left: 50%;
     margin-left: -237px;
     padding: 15px 24px;
-    position: fixed;
+    position: absolute;
     top: 338px;
     width: 429px;
 }
@@ -1668,6 +1668,5 @@ textarea::placeholder {
 }
 
 .feedbackShow {
-    display: block;
+    top: 0;
 }
- 
