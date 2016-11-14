@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>Глейси - Главная страница</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet"> 
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css" >
+        <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.min.css" >
     </head>
     <body>
         <input type="radio" class="carouselInput carouselInput1" name="carousel" id="btn1" checked="checked">
@@ -267,13 +267,13 @@
                     <button class="feedbackClose" id="feedbackClose"></button>
                     <form action="/echo" method="post">
                         <div class="feedbackNameWrap">
-                            <input id="feedbackName" name="name" type="text" placeholder="Как вас зовут?" required="required"><span>Как вас зовут?</span>
+                            <input id="feedbackName" name="name" type="text" placeholder="Как вас зовут?" required="required"><label for="feedbackName">Как вас зовут?</label>
                         </div>
                         <div class="feedbackEmailWrap">
-                            <input id="feedbackEmail" name="email" type="text" placeholder="Ваша почта для ответа?" required="required"><span>Ваша почта для ответа?</span>
+                            <input id="feedbackEmail" name="email" type="text" placeholder="Ваша почта для ответа?" required="required"><label for="feedbackEmail">Ваша почта для ответа?</label>
                         </div>
                         <div class="feedbackMessageWrap">
-                            <textarea id="feedbackMessage" name="message" placeholder="Напишите что нибудь..." required="required"></textarea><span>Напишите что нибудь...</span>
+                            <textarea id="feedbackMessage" name="message" placeholder="Напишите что нибудь..." required="required"></textarea><label for="feedbackMessage">Напишите что нибудь...</label>
                         </div>
                         <button class="button feedbackSubmit" id="feedbackSubmit" type="submit">Отправить</button>
                     </form>
@@ -297,8 +297,6 @@
                     iconLayout: "default#image",
                     iconImageHref: "img/map_placemark.png",
                     iconImageSize: [218, 142],
-                    // Смещение левого верхнего угла иконки относительно
-                    // её "ножки" (точки привязки).
                     iconImageOffset: [-40,-139],
                     hasBalloon: false
                 });
@@ -307,6 +305,6 @@
             });
         </script>
         <!--Карта конец-->
-         <script src="js/script.js" type="text/javascript"></script>
+         <script src="js/script.min.js" type="text/javascript"></script>
     </body> 
 </html>
