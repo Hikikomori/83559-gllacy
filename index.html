@@ -212,7 +212,7 @@
                         <div class="mapContacts">
                             <p class="mapContactsAdress">Адрес главного офиса и<br> офлайн магазина:<strong>ул. Большая Конюшенная<br> 19/8, Санкт-Петербург</strong></p>
                             <p class="mapContactsTel">Для заказов по телефону:<strong>8 812 450-25-25</strong>(с 10 до 20 ежедневно)</p>
-                            <a class="button" id="feedbackOpen" href="#">Форма обратной связи</a>
+                            <a class="button" id="feedbackOpen" href="feedback.html">Форма обратной связи</a>
                         </div>
                     </div>
                 </div>
@@ -280,31 +280,7 @@
                 </div>
             </div>
         </div>
-        <!--Карта начало-->
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-        <script type="text/javascript">
-            ymaps.ready(function () {
-                var myMap = new ymaps.Map("map", {
-                    center: [59.93931499, 30.32940030],
-                    zoom: 16
-                }, {
-                    searchControlProvider: "yandex#search"
-                }),
-                myPlacemark = new ymaps.Placemark([59.938631, 30.323055], {
-                    hintContent: "Магазин Глейси"
-                }, {
-                    cursor: "arrow",
-                    iconLayout: "default#image",
-                    iconImageHref: "img/map_placemark.png",
-                    iconImageSize: [218, 142],
-                    iconImageOffset: [-40,-139],
-                    hasBalloon: false
-                });
-
-                myMap.geoObjects.add(myPlacemark);
-            });
-        </script>
-        <!--Карта конец-->
          <script src="js/script.min.js" type="text/javascript"></script>
     </body> 
 </html>
