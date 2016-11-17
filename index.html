@@ -57,7 +57,10 @@
                                 <div class="searchFormWrap">
                                     <div class="searchForm">
                                         <form action="/echo" method="post">
-                                            <input name="search" placeholder="Что ищем?" type="search">
+                                            <div class="searchFormSearchWrap">
+                                                <input name="search" id="searchFormSearch" placeholder="Что ищем?" type="search" required="required">
+                                                <label for="searchFormSearch">Что ищем?</label>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -67,8 +70,14 @@
                                 <div class="loginFormWrap">
                                     <div class="loginForm">
                                         <form action="/echo" method="post">
-                                            <input name="email" placeholder="Электронная почта" type="email">
-                                            <input name="password" placeholder="Пароль" type="password">
+                                            <div class="loginFormEmailWrap">
+                                                <input name="email" id="loginFormEmail" placeholder="Электронная почта" type="text" required="required">
+                                                <label for="loginFormEmail">Электронная почта</label>
+                                            </div>
+                                            <div class="loginFormPasswordWrap">
+                                                <input name="password" id="loginFormPassword" placeholder="Пароль" type="password" required="required">
+                                                <label for="loginFormPassword">Пароль</label>
+                                            </div>
                                             <button class="button" type="submit">Войти</button>
                                             <div class="loginFormLinks">
                                                 <a href="#">Забыли пароль?</a>
@@ -200,7 +209,10 @@
                             <div class="subscribeForm">
                                 <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
                                 <form action="/echo" method="post">
-                                    <input type="email" placeholder="Электронная почта">
+                                    <div class="subscribeFormEmailWrap inlineblockFix">
+                                        <input type="text" placeholder="Электронная почта" id="subscribeFormEmail" required="required">
+                                        <label for="subscribeFormEmail">Электронная почта</label>
+                                    </div>
                                     <button class="button" type="submit">Отправить</button>
                                 </form>
                             </div>
@@ -252,7 +264,7 @@
                     <div class="layoutColumn">
                         <div class="madeInWrap inlineblockFix">
                             <div class="madeIn">
-                                <img src="img/htmlacademy_logo.png" alt="HTML Academy" class="madeInLogo">
+                                <img src="img/htmlacademy_logo.png" height="38" width="108" alt="HTML Academy" class="madeInLogo">
                                 <div class="copyright">Сделано в <a class="link" href="https://htmlacademy.ru/" target="_blank">HTML Academy</a> &copy; 2016</div> 
                             </div>
                         </div>

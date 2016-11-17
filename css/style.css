@@ -67,6 +67,7 @@ textarea::placeholder {
 
 .button {
     background: #ec593c;
+    background: -webkit-linear-gradient(bottom, #e74a35 0%,#f26843 100%);
     background: linear-gradient(to top, #e74a35 0%,#f26843 100%);
     border-radius: 22px;
     box-sizing: border-box;
@@ -84,11 +85,13 @@ textarea::placeholder {
 }
 
 .button:hover {
+    background: -webkit-linear-gradient(bottom, #ec6e5d 0%,#f58669 100%);
     background: linear-gradient(to top, #ec6e5d 0%,#f58669 100%); 
     box-shadow: 0px 2px 2px 0px #ac1000;    
 }
 
 .button:active {
+    background: -webkit-linear-gradient(top, #d74531 0%,#e1613e 100%);
     background: linear-gradient(to bottom, #d74531 0%,#e1613e 100%);
     box-shadow: 0px 2px 2px 0px #942718 inset;
 }
@@ -362,7 +365,8 @@ textarea::placeholder {
     left: 50%;
     position: absolute;
     top: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     width: 17px;
 }
 
@@ -383,7 +387,8 @@ textarea::placeholder {
     left: 18px;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     width: 20px;
 }
 
@@ -404,7 +409,8 @@ textarea::placeholder {
     left: 17px;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     width: 21px;
 }
 
@@ -518,6 +524,49 @@ textarea::placeholder {
     color: #e84d37;
 }
 
+.searchFormSearchWrap,
+.loginFormEmailWrap,
+.loginFormPasswordWrap {
+    position: relative;
+}
+
+.mainHeader input:hover{
+    border: 2px solid #c7c6c5;   
+}
+
+.searchForm input:hover {
+    padding: 0 14px;
+} 
+
+.loginForm input:hover {
+    height: 38px; 
+    padding: 0 12px;
+} 
+
+.mainHeader input:focus {
+    border-color: #8fbdec;    
+}
+
+.mainHeader input + label {
+    color: #999;
+    display: none;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    left: 15px;
+    position: absolute;
+    top: -15px;
+}
+
+.mainHeader input:valid + label {
+    display: block;
+}
+
+.mainHeader input:focus + label {
+    color: #5b9ddf;
+    display: block;
+}
+
 .cartDropdownWrap {
     right: 0;
     top: 30px;
@@ -556,7 +605,7 @@ textarea::placeholder {
 
 .removeItem {
     border: none;
-    background: url('../img/sprite.png') no-repeat -148px -118px;
+    background: url(../img/sprite.png) no-repeat -148px -118px;
     cursor: pointer;
     display: inline-block;
     height: 11px;
@@ -763,7 +812,7 @@ textarea::placeholder {
 }
 
 .filterRow input + label::before {
-    background-image: url("../img/sprite.png");
+    background-image: url(../img/sprite.png);
     background-repeat: no-repeat;
     content: "";
     cursor: pointer;
@@ -954,7 +1003,8 @@ textarea::placeholder {
     position: absolute;
     text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76); 
     top: 458px;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 
 .banners {
@@ -1039,7 +1089,7 @@ textarea::placeholder {
 }
 
 .itemHits .goodsItem::after {
-    background: url('../img/sprite.png') no-repeat 0 -52px;
+    background: url(../img/sprite.png) no-repeat 0 -52px;
     content: "";
     height: 61px;
     left: 0;
@@ -1096,7 +1146,7 @@ textarea::placeholder {
 }
 
 .goodsItemPrice span::before {
-    background: url('../img/sprite.png') no-repeat -199px -114px;
+    background: url(../img/sprite.png) no-repeat -199px -114px;
     bottom: 4px;
     content: "";
     height: 36px;
@@ -1125,7 +1175,8 @@ textarea::placeholder {
     padding: 0 15px;
     position: absolute;
     text-overflow: ellipsis;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 
 .goodsItem:hover .goodsItemImage,
@@ -1197,7 +1248,7 @@ textarea::placeholder {
 }
 
 .aboutUsItem::before {
-    background: url('../img/sprite.png') no-repeat;
+    background: url(../img/sprite.png) no-repeat;
     content: "";
     left: -58px;
     height: 49px;
@@ -1271,6 +1322,7 @@ textarea::placeholder {
 }
 
 .blogSubscribe {
+    background: -webkit-repeating-linear-gradient(315deg,#ffffff,#ffffff 7px,#92cdff 7px,#92cdff 14px,#ffffff 14px,#ffffff 21px,#fe9e90 21px,#fe9e90 28px);
     background: repeating-linear-gradient(135deg,#ffffff,#ffffff 7px,#92cdff 7px,#92cdff 14px,#ffffff 14px,#ffffff 21px,#fe9e90 21px,#fe9e90 28px);
     padding: 5px;
 }
@@ -1289,13 +1341,52 @@ textarea::placeholder {
     min-height: 103px;
 }
 
+.subscribeFormEmailWrap {
+    display: inline-block;
+    margin-right: 3px;
+    position: relative;
+    vertical-align: top;
+    width: calc(100% - 143px);
+}
+
 .subscribeForm input {
     border: 1px solid rgba(178,178,178,0.52);
-    border-radius: 4px; 
-    height: 42px;
-    margin-right: 3px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px; 
+    height: 44px;
     padding: 0 15px;
-    width: calc(100% - 173px);
+    width: 100%;
+}
+
+.subscribeForm input:hover{
+    border: 2px solid #c7c6c5;
+    height: 44px; 
+    padding: 0 14px;   
+}
+
+.subscribeForm input:focus {
+    border-color: #8fbdec;    
+}
+
+.subscribeForm input + label {
+    color: #999;
+    display: none;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    left: 15px;
+    position: absolute;
+    top: -15px;
+}
+
+.subscribeForm input:valid + label {
+    display: block;
+}
+
+.subscribeForm input:focus + label {
+    color: #5b9ddf;
+    display: block;
 }
 
 .subscribeForm button {
@@ -1372,7 +1463,7 @@ textarea::placeholder {
 
 .pageNavigatorList::before,
 .pageNavigatorList::after {
-    background: url('../img/sprite.png') no-repeat -184px -118px;
+    background: url(../img/sprite.png) no-repeat -184px -118px;
     content: "";
     height: 14px;
     position: absolute;
@@ -1383,7 +1474,8 @@ textarea::placeholder {
 .pageNavigatorList::before {
     left: 0;
     opacity: 0.2;
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 
 .pageNavigatorList::after {
@@ -1455,7 +1547,7 @@ textarea::placeholder {
 }
 
 .socialButtons a{
-    background: url('../img/sprite.png') no-repeat;
+    background: url(../img/sprite.png) no-repeat;
     border-radius: 50%;
     display: block;
     opacity: 0.8;
@@ -1516,7 +1608,7 @@ textarea::placeholder {
 }
 
 .footerLinksCol .highlited::before {
-    background: url('../img/sprite.png') no-repeat -164px -118px;
+    background: url(../img/sprite.png) no-repeat -164px -118px;
     content: "";
     height: 13px;
     left: -22px;
@@ -1568,12 +1660,13 @@ textarea::placeholder {
     padding: 15px 24px;
     position: absolute;
     top: 100%; 
+    -webkit-transition: top 0.6s ease; 
     transition: top 0.6s ease;
     width: 429px;
 }
 
 .feedbackClose {
-    background: url('../img/sprite.png') no-repeat -147px -133px;
+    background: url(../img/sprite.png) no-repeat -147px -133px;
     border: none;
     cursor: pointer;
     height: 17px;
