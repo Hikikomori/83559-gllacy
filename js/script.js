@@ -1,24 +1,23 @@
 //Карта начало
 ymaps.ready(function () {
-                var myMap = new ymaps.Map("map", {
-                    center: [59.93931499, 30.32940030],
-                    zoom: 16
-                }, {
-                    searchControlProvider: "yandex#search"
-                }),
-                myPlacemark = new ymaps.Placemark([59.938631, 30.323055], {
-                    hintContent: "Магазин Глейси"
-                }, {
-                    cursor: "arrow",
-                    iconLayout: "default#image",
-                    iconImageHref: "img/map_placemark.png",
-                    iconImageSize: [218, 142],
-                    iconImageOffset: [-40,-139],
-                    hasBalloon: false
-                });
-
-                myMap.geoObjects.add(myPlacemark);
-            });
+    var myMap = new ymaps.Map("map", {
+        center: [59.93931499, 30.32940030],
+        zoom: 16
+    }, {
+        searchControlProvider: "yandex#search"
+    }),
+    myPlacemark = new ymaps.Placemark([59.938631, 30.323055], {
+        hintContent: "Магазин Глейси"
+    }, {
+        cursor: "arrow",
+        iconLayout: "default#image",
+        iconImageHref: "img/map_placemark.png",
+        iconImageSize: [218, 142],
+        iconImageOffset: [-40,-139],
+        hasBalloon: false
+    });
+    myMap.geoObjects.add(myPlacemark);
+});
 //Карта конец
 
 var feedbackOpen = document.querySelector("#feedbackOpen");

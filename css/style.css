@@ -153,6 +153,10 @@ textarea::placeholder {
     text-align: right;
 }
 
+.wrap {
+    min-width: 900px;
+}
+
 .wrapCatalog {
     background-image: url(../img/catalog_bl.png);
     background-position: center top;
